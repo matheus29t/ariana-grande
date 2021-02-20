@@ -1,0 +1,52 @@
+TEAM GRANDE
+mini mundo dos grandes mundanos
+
+FANFIC:
+Na rede de academias “MiniMonstros”, cada unidade possui: nome, endereço 
+(rua, bairro, cep), conta de depósito, telefone e é identificada pelo CNPJ. Na 
+“MiniMonstros”, as pessoas, que possuem os atributos nome, endereço (rua, bairro, 
+cep), telefone e identificadas pelo seu CPF, são segregadas em duas categorias: 
+Cliente e Funcionário. Os clientes possuem como atributos: frequência e plano de 
+saúde; já os funcionários possuem como atributos: salário e função. Cada cliente 
+possui uma matrícula, que, por sua vez, possui como atributos: data de renovação, 
+plano e conta bancária. A matrícula é realizada pela academia através da relação 
+“Realiza”. Cada matrícula gera uma ou mais parcelas que têm como atributos: valor, 
+data, forma de pagamento e código (que serve como discriminador). Funcionários 
+são responsáveis por acompanhar clientes, um funcionário pode acompanhar 
+diversos clientes e um cliente pode ser acompanhado por diversos funcionários. Um 
+funcionário pode gerar, para um cliente, uma avaliação que possui como atributos: 
+gordura corporal, massa muscular, peso, altura e data de avaliação (que serve como 
+discriminador). A avaliação ocorre através de uma relação chamada “Avalia”. Um 
+funcionário também pode gerenciar outro funcionário através da relação “Gerencia”
+
+
+_________________________________________________________________________
+
+
+Entidades:
+Academia - Endereço (rua, bairro, cep), Conta de depósito, CNPJ, Nome
+Pessoa - Nome, CPF, Endereço (rua, bairro, cep), telefone {
+Cliente - Frequência, Plano de Saúde
+Funcionário - Salário, função }
+Matrícula - Data de renovação, Plano, Conta bancária
+Avaliação - Gordura Corporal, Massa muscular, peso, altura, data de realização
+Parcela - Valor, Data, Forma de Pagamento, Código
+
+Relações:
+Acompanha (cliente-funcionário) (N:M)
+Possui (cliente-matrícula)  (1:1)
+Avalia (Funcionário-cliente-avaliação) (N-ário) (1:1:N)
+Gera (Matrícula-Parcelas) (1:N)
+Realiza (Academia-Matrícula)  (parcial-total) (1:N)
+Gerencia (Funcionário) (Auto) (parcial-parcial) (1:1)
+
+Checklist:
+Relacionamento 1:1 ou 1:N - OK
+Relacionamento N:M - OK
+Relacionamento parcial-total - OK
+Relacionamento parcial-parcial - OK
+Relacionamento identificador (Entidade Fraca kkk) - OK
+Relacionamento Unário (Auto Relacionamento huhuhu) - OK
+Relacionamento Binário - OK
+Relacionamento N-ário ou Entidade Associativa - OK
+Herança (qualquer tipo) - Pessoa-cliente-funcionário OK
