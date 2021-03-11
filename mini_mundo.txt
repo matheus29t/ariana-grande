@@ -38,7 +38,7 @@ Possui (cliente-matrícula)  (1:1)
 Avalia (Funcionário-cliente-avaliação) (N-ário) (1:1:N)
 Gera (Matrícula-Parcelas) (1:N)
 Realiza (Academia-Matrícula)  (parcial-total) (1:N)
-Gerencia (Funcionário) (Auto) (parcial-parcial) (1:1)
+Gerencia (Funcionário) (Auto) (parcial-parcial) (1:N)
 
 Checklist:
 Relacionamento 1:1 ou 1:N - OK
