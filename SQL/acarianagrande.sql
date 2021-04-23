@@ -110,7 +110,7 @@ CREATE TABLE gerencia(
     CONSTRAINT fk1_gerencia FOREIGN KEY gerenciador REFERENCES funcionario(cpf)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-    CONSTRAINT fk2_gerencia FOREIGN KEy gerenciado REFERENCES funcionario(cpf)
+    CONSTRAINT fk2_gerencia FOREIGN KEY gerenciado REFERENCES funcionario(cpf)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 )
